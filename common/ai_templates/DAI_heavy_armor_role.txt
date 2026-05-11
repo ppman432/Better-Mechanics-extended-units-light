@@ -1,0 +1,107 @@
+generic_heavy_armor_role = {
+	role = heavy_armor_role
+	upgrade_prio = { 
+		factor = 200
+		
+		modifier = {
+		factor = -100
+			NOT = {
+				OR = {
+					has_tech = improved_heavy_tank_chassis
+					has_tech = improved_heavy_tank
+				}
+			}
+		}
+	}	
+	
+	GENERIC_HEAVY_ARMOR_BASIC_35A = {                     ### Better unit	
+		enable = { 
+			OR = {
+				has_tech = improved_heavy_tank_chassis
+				has_tech = improved_heavy_tank
+			}
+			NOT = {
+				has_tech = mechanised_infantry
+			}
+			num_of_military_factories > 79
+		}
+		upgrade_prio = { factor = 100 }
+		
+			
+	# TEMPLATE
+		reinforce_prio = 2
+		
+		can_upgrade_in_field = { always = no }
+
+		target_template = {
+			
+			regiments = {
+				heavy_armor = 8
+				motorized = 8
+				mot_anti_tank_brigade = 1
+			}
+
+			support = {
+				light_tank_recon = 1
+				logistics_company = 1
+				anti_air = 1
+				maintenance_company = 1				
+				engineer = 1
+				signal_company = 1
+				artillery = 1
+				anti_tank = 1
+				rocket_artillery = 1
+				field_hospital = 1
+			}
+		}
+	}
+	
+	GENERIC_HEAVY_ARMOR_BASIC_35B = {                     ### Way Better unit	
+		enable = { 
+			AND = {
+				OR = {
+					has_tech = improved_heavy_tank_chassis
+					has_tech = improved_heavy_tank
+				}
+				has_tech = mechanised_infantry
+			}
+			NOT = {
+				OR = {
+					has_tech = main_battle_tank_chassis
+					has_tech = main_battle_tank
+				}
+			}
+			num_of_military_factories > 79
+		}
+		upgrade_prio = { factor = 100 }
+	
+	# TEMPLATE
+		reinforce_prio = 2
+		
+		can_upgrade_in_field = { always = no }
+
+		target_template = {
+			
+			regiments = {
+				heavy_armor = 8
+				heavy_tank_destroyer_brigade = 1
+				mechanized = 8
+			}
+
+			support = {
+				light_tank_recon = 1
+				logistics_company = 1
+				anti_air = 1
+				maintenance_company = 1				
+				engineer = 1
+				signal_company = 1
+				artillery = 1
+				anti_tank = 1
+				rocket_artillery = 1
+				field_hospital = 1
+			}
+		}
+
+	}
+}
+
